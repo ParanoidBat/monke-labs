@@ -1,15 +1,15 @@
 import { Grid, Typography } from "@mui/material"
 import Navigator from "../../components/Navigator"
 import styles from "./styles"
-import WavingHandSVG from '../../assets/waving_hand.svg'
-import SearchSVG from '../../assets/search.svg'
-import SaladSVG from '../../assets/salad.svg'
-import SteakSVG from '../../assets/steak.svg'
-import GreenSaladSVG from '../../assets/greensalad.svg'
-import FreshVegiesSVG from '../../assets/freshvegies.svg'
-import CherriesSVG from '../../assets/cherries.svg'
-import EggsSVG from '../../assets/eggs.svg'
-import HeartSVG from '../../assets/heart.svg'
+import WavingHandSVG from '../../assets/home/waving_hand.svg'
+import SearchSVG from '../../assets/home/search.svg'
+import SaladSVG from '../../assets/home/salad.svg'
+import SteakSVG from '../../assets/home/steak.svg'
+import GreenSaladSVG from '../../assets/home/greensalad.svg'
+import FreshVegiesSVG from '../../assets/home/freshvegies.svg'
+import CherriesSVG from '../../assets/home/cherries.svg'
+import EggsSVG from '../../assets/home/eggs.svg'
+import HeartSVG from '../../assets/home/heart.svg'
 
 const categorySVGs = [
     SaladSVG,

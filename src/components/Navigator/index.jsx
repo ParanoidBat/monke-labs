@@ -1,9 +1,9 @@
 import { Grid } from '@mui/material'
-import HomeSVG from '../../assets/home.svg'
-import HeartSVG from '../../assets/nav_heart.svg'
-import StatsSVG from '../../assets/stats.svg'
-import ProfileSVG from '../../assets/profilecircle.svg'
-import BagSVG from '../../assets/bag2.svg'
+import HomeSVG from '../../assets/navigator/home.svg'
+import HeartSVG from '../../assets/navigator/nav_heart.svg'
+import StatsSVG from '../../assets/navigator/stats.svg'
+import ProfileSVG from '../../assets/navigator/profilecircle.svg'
+import BagSVG from '../../assets/navigator/bag2.svg'
 import styles from './styles'
 
 export default function Navigator(){
