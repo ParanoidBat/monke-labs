@@ -1,4 +1,5 @@
 import { Grid, Typography } from "@mui/material"
+import Navigator from "../../components/Navigator"
 import styles from "./styles"
 import WavingHandSVG from '../../assets/waving_hand.svg'
 import SearchSVG from '../../assets/search.svg'
@@ -67,8 +68,8 @@ export default function Home(){
                     <Typography>It&apos;s dinner time!</Typography>
                 </Grid>
                 <Grid container item xs={7} justifyContent={"space-between"} >
-                    <Grid item> <img src={WavingHandSVG} /> </Grid>
-                    <Grid item> <img src={SearchSVG} /> </Grid>
+                    <Grid item> <img src={WavingHandSVG} alt="Waving hand icon" /> </Grid>
+                    <Grid item> <img src={SearchSVG} alt="Search icon" /> </Grid>
                 </Grid>
             </Grid>
             <Grid container justifyContent={"space-between"} >
@@ -99,7 +100,7 @@ export default function Home(){
                     <Typography style={{...styles.subHeading, color: '#e74c1b'}}>Filter</Typography>
                 </Grid>
             </Grid>
-            <Grid container style={{overflowY: "auto"}} justifyContent={"space-between"} >
+            <Grid container style={{overflowY: "auto", maxHeight: 450}} justifyContent={"space-between"} >
                 {
                     itemSVGs.map((svg, idx) => {
                         return (
@@ -119,6 +120,7 @@ export default function Home(){
                     })
                 }
             </Grid>
+            <Navigator/>
         </>
     )
 }
