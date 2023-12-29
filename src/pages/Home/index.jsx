@@ -61,7 +61,7 @@ const itemSVGs = [
 
 export default function Home(){
     return (
-        <Grid container direction={"column"} rowGap={2} style={{background: "#f0f4fc", borderRadius: 50, padding: "18px 30px"}} >
+        <Grid container direction={"column"} rowGap={2} style={styles.container} >
             <Grid container item xs={2} >
                 <Grid item xs={5} >
                     <Typography style={styles.heading} >Hey Danial</Typography>

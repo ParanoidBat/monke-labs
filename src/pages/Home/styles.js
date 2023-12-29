@@ -1,4 +1,9 @@
 export default {
+    container: {
+        background: "#f0f4fc", 
+        borderRadius: 50, 
+        padding: "18px 30px"
+    },
     heading: {
         color: "#000",
         fontSize: "25px",
@@ -12,13 +17,11 @@ export default {
     category: {
         borderRadius: 10,
         width: 145,
-        // height: 71
     },
     item: {
         borderRadius: "20px 20px 0px 0px",
         objectFit: "cover",
         width: 140,
-        // height: 172
     },
     info: {
         padding: "8px 13px",
