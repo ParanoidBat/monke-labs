@@ -1,6 +1,5 @@
 export default {
     button: {
-        width: 188,
         height: 62,
         padding: "12px 24px",
         borderRadius: 50,
