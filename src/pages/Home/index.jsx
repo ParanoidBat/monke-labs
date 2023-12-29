@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Grid, Typography } from "@mui/material";
 import Navigator from "../../components/Navigator";
 import ProductModal from "../../components/ProductModal";
-import styles from "./styles";
+import FilterModal from "../../components/FilterModal";
 import WavingHandSVG from "../../assets/home/waving_hand.svg";
 import SearchSVG from "../../assets/home/search.svg";
 import SaladSVG from "../../assets/home/salad.svg";
@@ -12,6 +12,7 @@ import FreshVegiesSVG from "../../assets/home/freshvegies.svg";
 import CherriesSVG from "../../assets/home/cherries.svg";
 import EggsSVG from "../../assets/home/eggs.svg";
 import HeartSVG from "../../assets/home/heart.svg";
+import styles from "./styles";
 
 const categorySVGs = [SaladSVG, SteakSVG, SaladSVG];
 const itemSVGs = [
@@ -75,12 +76,16 @@ const itemSVGs = [
 
 export default function Home() {
   const [openDialog, setOpenDialog] = useState(false);
+  const [openFilterDialog, setOpenFilterDialog] = useState(false);
   const [selectedItem, setSelectedItem] = useState(undefined);
+  const [priceRange, setPriceRange] = useState([0, 100]);
 
   const handleItemClick = (item) => {
     setSelectedItem(item);
     setOpenDialog(true);
   };
+
+  console.log(priceRange[0]);
 
   return (
     <Grid container direction={"column"} rowGap={2} style={styles.container}>
@@ -121,7 +126,7 @@ export default function Home() {
         <Grid item>
           <Typography style={styles.subHeading}>Recommended Items</Typography>
         </Grid>
-        <Grid item>
+        <Grid item onClick={() => setOpenFilterDialog(true)}>
           <Typography style={{ ...styles.subHeading, color: "#e74c1b" }}>
             Filter
           </Typography>
@@ -135,38 +140,42 @@ export default function Home() {
         justifyContent={"space-between"}
         rowGap={1}
       >
-        {itemSVGs.map((item, idx) => {
-          return (
-            <Grid
-              container
-              item
-              direction={"column"}
-              key={`item-${idx}`}
-              xs={5}
-            >
-              <Grid item onClick={() => handleItemClick(item)}>
-                <img src={item.svg} style={styles.item} />
-              </Grid>
+        {itemSVGs
+          .filter(
+            (item) => item.price >= priceRange[0] && item.price <= priceRange[1]
+          )
+          .map((item, idx) => {
+            return (
               <Grid
                 container
                 item
-                style={styles.info}
-                justifyContent={"space-between"}
+                direction={"column"}
+                key={`item-${idx}`}
+                xs={5}
               >
-                <Typography style={styles.infoText}>{item.info}</Typography>
-                <Grid item xs={6}>
-                  <Typography>
-                    <span style={{ color: "#e74c1b" }}>$</span>&nbsp;
-                    {item.price}
-                  </Typography>
+                <Grid item onClick={() => handleItemClick(item)}>
+                  <img src={item.svg} style={styles.item} />
                 </Grid>
-                <Grid item xs={6} style={{ textAlign: "end" }}>
-                  <img src={HeartSVG} />
+                <Grid
+                  container
+                  item
+                  style={styles.info}
+                  justifyContent={"space-between"}
+                >
+                  <Typography style={styles.infoText}>{item.info}</Typography>
+                  <Grid item xs={6}>
+                    <Typography>
+                      <span style={{ color: "#e74c1b" }}>$</span>&nbsp;
+                      {item.price}
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={6} style={{ textAlign: "end" }}>
+                    <img src={HeartSVG} />
+                  </Grid>
                 </Grid>
               </Grid>
-            </Grid>
-          );
-        })}
+            );
+          })}
       </Grid>
       <Grid container item xs={2}>
         <Navigator />
@@ -176,6 +185,14 @@ export default function Home() {
           handleClose={() => setOpenDialog(false)}
           open={openDialog}
           product={selectedItem}
+        />
+      )}
+      {openFilterDialog && (
+        <FilterModal
+          handleClose={() => setOpenFilterDialog(false)}
+          open={openFilterDialog}
+          setPriceRange={setPriceRange}
+          priceRange={priceRange}
         />
       )}
     </Grid>
