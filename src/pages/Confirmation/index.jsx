@@ -1,10 +1,13 @@
 import { Grid, Typography } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 import ArrowLeftSVG from '../../assets/product_page/arrowleft.svg'
 import RiderSVG from '../../assets/rider.svg'
 import styles from './styles'
 import ActionButton from '../../components/ActionButton'
 
 export default function Confirmation(){
+    const navigate = useNavigate();
+
     return (
         <Grid container style={styles.container} gap={3} direction={"column"} >
             <Grid item xs={1}>
@@ -22,7 +25,7 @@ export default function Confirmation(){
                 </Typography>
             </Grid>
             <Grid item xs={2} alignSelf={"center"} >
-                <ActionButton text={"Return Home"} />
+                <ActionButton text={"Return Home"} action={() => navigate('/')} />
             </Grid>
         </Grid>
     )

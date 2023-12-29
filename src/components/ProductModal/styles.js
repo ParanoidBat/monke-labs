@@ -22,7 +22,6 @@ export default {
     desc: {
         color: '#a1a1a1',
         fontSize: 16,
-        width: 359,
         height: 105
     }
 }
