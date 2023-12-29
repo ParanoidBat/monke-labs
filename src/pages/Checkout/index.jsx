@@ -49,7 +49,11 @@ export default function Checkout() {
     <Grid container style={styles.container} gap={3}>
       <Grid container item>
         <Grid item xs={4}>
-          <img src={ArrowLeftSVG} alt="Back icon" />
+          <img
+            onClick={() => navigate(-1)}
+            src={ArrowLeftSVG}
+            alt="Back icon"
+          />
         </Grid>
         <Grid item>
           <Typography style={styles.heading}>Checkout</Typography>

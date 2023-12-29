@@ -25,13 +25,22 @@ export default function Cart() {
     return total;
   };
 
+  // eslint-disable-next-line no-unused-vars
   const [total, _] = useState(calculateCartTotal);
+
+  const handleButtonAction = () => {
+    if (cart.length) navigate(`/checkout?total=${total}`);
+  };
 
   return (
     <Grid container style={styles.container} gap={3}>
       <Grid container item>
         <Grid item xs={4}>
-          <img src={ArrowLeftSVG} alt="Back icon" />
+          <img
+            onClick={() => navigate(-1)}
+            src={ArrowLeftSVG}
+            alt="Back icon"
+          />
         </Grid>
         <Grid item>
           <Typography style={styles.heading}>My Bucket</Typography>
@@ -46,7 +55,7 @@ export default function Cart() {
         tag={"Total"}
         price={total}
         btnText={"Checkout"}
-        btnAction={() => navigate(`/checkout?total=${total}`)}
+        btnAction={handleButtonAction}
       />
     </Grid>
   );

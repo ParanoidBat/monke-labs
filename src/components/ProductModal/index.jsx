@@ -22,6 +22,8 @@ export default function ProductModal({ handleClose, open, product }) {
     });
 
   const handleAddToCart = () => {
+    if (quantity === 0) return;
+
     const cartItem = {
       info: product.info,
       price: product.price,
