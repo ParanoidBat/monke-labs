@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Grid, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContext";
@@ -15,21 +15,26 @@ import styles from "./styles";
 const cartSVGs = [CakeSVG, SaladSVG, SteakSVG, VeggiesSVG, MixSaladSVG];
 
 export default function Cart() {
-  const { cart } = useContext(CartContext);
+  // eslint-disable-next-line no-unused-vars
+  const [total, setTotal] = useState(0);
+  const { cart, setCart } = useContext(CartContext);
   const navigate = useNavigate();
 
-  const calculateCartTotal = () => {
+  useEffect(() => {
     let total = 0;
-    cart.forEach((item) => (total += item.price));
+    cart.forEach((item) => (total += item.price * item.quantity));
 
-    return total;
-  };
-
-  // eslint-disable-next-line no-unused-vars
-  const [total, _] = useState(calculateCartTotal);
+    setTotal(total);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cart.length]);
 
   const handleButtonAction = () => {
     if (cart.length) navigate(`/checkout?total=${total}`);
+  };
+
+  const handleRemoveItem = (idx) => {
+    const arr = cart.filter((_, index) => index !== idx);
+    setCart(arr);
   };
 
   return (
@@ -48,7 +53,13 @@ export default function Cart() {
       </Grid>
       <Grid container item rowGap={2.5}>
         {cart.map((item, idx) => (
-          <CartItem item={item} key={idx} svg={cartSVGs[idx]} />
+          <CartItem
+            item={item}
+            key={idx}
+            svg={cartSVGs[idx]}
+            index={idx}
+            removeItem={handleRemoveItem}
+          />
         ))}
       </Grid>
       <ActionArea

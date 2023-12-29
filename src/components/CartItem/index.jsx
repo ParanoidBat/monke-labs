@@ -1,7 +1,8 @@
 import { Grid, Typography } from "@mui/material";
+import MinusSVG from "../../assets/cart/minuscircle.svg";
 import styles from "./styles";
 
-export default function CartItem({ item, svg }) {
+export default function CartItem({ item, svg, index, removeItem }) {
   return (
     <Grid container justifyContent={"space-between"} style={styles.container}>
       <Grid container item xs={3}>
@@ -15,6 +16,7 @@ export default function CartItem({ item, svg }) {
         justifyContent={"space-between"}
       >
         <Typography style={styles.desc}>{item.info}</Typography>
+        <img onClick={() => removeItem(index)} src={MinusSVG} />
         <Grid item xs={6}>
           <Typography style={styles.quantity}>
             Quantity&nbsp;{item.quantity}
