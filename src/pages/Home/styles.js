@@ -12,13 +12,13 @@ export default {
     category: {
         borderRadius: 10,
         width: 145,
-        height: 71
+        // height: 71
     },
     item: {
         borderRadius: "20px 20px 0px 0px",
         objectFit: "cover",
         width: 140,
-        height: 172
+        // height: 172
     },
     info: {
         padding: "8px 13px",

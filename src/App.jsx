@@ -4,9 +4,7 @@ import AppRoutes from "./AppRoutes"
 function App (){
   return( 
     <Router>
-      <div style={{padding: "0px 30px" }} >
-        <AppRoutes />
-      </div>
+      <AppRoutes />
     </Router>
   )
 }

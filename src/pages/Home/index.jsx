@@ -61,8 +61,8 @@ const itemSVGs = [
 
 export default function Home(){
     return (
-        <>
-            <Grid container style={{marginTop: 74}} >
+        <Grid container direction={"column"} rowGap={2} style={{background: "#f0f4fc", borderRadius: 50, padding: "18px 30px"}} >
+            <Grid container item xs={2} >
                 <Grid item xs={5} >
                     <Typography style={styles.heading} >Hey Danial</Typography>
                     <Typography>It&apos;s dinner time!</Typography>
@@ -72,7 +72,7 @@ export default function Home(){
                     <Grid item> <img src={SearchSVG} alt="Search icon" /> </Grid>
                 </Grid>
             </Grid>
-            <Grid container justifyContent={"space-between"} >
+            <Grid container item xs={1} justifyContent={"space-between"} >
                 <Grid item>
                     <Typography style={styles.subHeading} >Categories</Typography>
                 </Grid>
@@ -80,7 +80,7 @@ export default function Home(){
                     <Typography style={{...styles.subHeading, color: '#e74c1b'}}>See all</Typography>
                 </Grid>
             </Grid>
-            <Grid container wrap="nowrap" style={{overflowX: "auto"}}  >
+            <Grid container item xs={2} wrap="nowrap" style={{overflowX: "auto"}}  >
                 {
                     categorySVGs.map((svg, idx) => {
                         return (
@@ -92,7 +92,7 @@ export default function Home(){
                 }
 
             </Grid>
-            <Grid container justifyContent={"space-between"} >
+            <Grid container item xs={1} justifyContent={"space-between"} >
                 <Grid item>
                     <Typography style={styles.subHeading} >Recommended Items</Typography>
                 </Grid>
@@ -100,7 +100,7 @@ export default function Home(){
                     <Typography style={{...styles.subHeading, color: '#e74c1b'}}>Filter</Typography>
                 </Grid>
             </Grid>
-            <Grid container style={{overflowY: "auto", maxHeight: 450}} justifyContent={"space-between"} >
+            <Grid container item xs={4} style={{overflowY: "auto", maxHeight: 450}} justifyContent={"space-between"} rowGap={1} >
                 {
                     itemSVGs.map((svg, idx) => {
                         return (
@@ -120,7 +120,9 @@ export default function Home(){
                     })
                 }
             </Grid>
-            <Navigator/>
-        </>
+            <Grid container item xs={2}>
+                <Navigator/>
+            </Grid>
+        </Grid>
     )
 }
