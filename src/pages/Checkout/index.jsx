@@ -9,12 +9,12 @@ import {
   Typography,
 } from "@mui/material";
 import { CartContext } from "../../contexts/CartContext";
-import ArrowLeftSVG from "../../assets/product_page/arrowleft.svg";
 import MasterCardSVG from "../../assets/checkout/mastercard.svg";
 import PayoneerSVG from "../../assets/checkout/payoneer.svg";
 import PaypalSVG from "../../assets/checkout/paypal.svg";
 import ActionArea from "../../components/ActionArea";
 import styles from "./styles";
+import BackArrow from "../../components/BackArrow";
 
 function Card({ svg, info }) {
   return (
@@ -68,11 +68,7 @@ export default function Checkout() {
     >
       <Grid container item>
         <Grid item xs={4}>
-          <img
-            onClick={() => navigate(-1)}
-            src={ArrowLeftSVG}
-            alt="Back icon"
-          />
+          <BackArrow location={-1} />
         </Grid>
         <Grid item>
           <Typography style={styles.heading}>Checkout</Typography>

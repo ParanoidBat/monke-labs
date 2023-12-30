@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import { Grid, Stack, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContext";
-import ArrowLeftSVG from "../../assets/product_page/arrowleft.svg";
 import CartItem from "../../components/CartItem";
 import ActionArea from "../../components/ActionArea";
 import CakeSVG from "../../assets/cart/cake.svg";
@@ -12,6 +11,7 @@ import VeggiesSVG from "../../assets/cart/cart_veggies.svg";
 import MixSaladSVG from "../../assets/cart/mix_salad.svg";
 import CartIllustration from "../../assets/cart/cart_ilt.svg";
 import styles from "./styles";
+import BackArrow from "../../components/BackArrow";
 
 const cartSVGs = [CakeSVG, SaladSVG, SteakSVG, VeggiesSVG, MixSaladSVG];
 
@@ -52,11 +52,7 @@ export default function Cart() {
     >
       <Grid container item>
         <Grid item xs={4}>
-          <img
-            onClick={() => navigate(-1)}
-            src={ArrowLeftSVG}
-            alt="Back icon"
-          />
+          <BackArrow location={-1} />
         </Grid>
         <Grid item>
           <Typography style={styles.heading}>My Bucket</Typography>

@@ -1,9 +1,9 @@
 import { Grid, Stack, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import ArrowLeftSVG from "../../assets/product_page/arrowleft.svg";
 import RiderSVG from "../../assets/rider.svg";
-import styles from "./styles";
 import ActionButton from "../../components/ActionButton";
+import BackArrow from "../../components/BackArrow";
+import styles from "./styles";
 
 export default function Confirmation() {
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ export default function Confirmation() {
       }}
     >
       <Grid>
-        <img onClick={() => navigate("/")} src={ArrowLeftSVG} alt="Back icon" />
+        <BackArrow location={"/"} />
       </Grid>
       <Grid>
         <Typography style={styles.heading} textAlign={"center"}>
