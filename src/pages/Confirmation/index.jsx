@@ -52,7 +52,7 @@ export default function Confirmation() {
         <ActionButton
           text={"Return Home"}
           action={() => navigate("/")}
-          width={211}
+          width={212}
         />
       </Grid>
     </Stack>

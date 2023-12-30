@@ -67,7 +67,17 @@ export default function ProductModal({ handleClose, open, product }) {
         },
       }}
     >
-      <Grid container direction={"column"} rowGap={2} style={styles.container}>
+      <Grid
+        container
+        direction={"column"}
+        rowGap={2}
+        style={styles.container}
+        sx={{
+          width: {
+            md: 480,
+          },
+        }}
+      >
         <Grid container item xs={1}>
           <Grid item xs={10}>
             <img onClick={handleClose} src={ArrowLeftSVG} alt="Back icon" />
