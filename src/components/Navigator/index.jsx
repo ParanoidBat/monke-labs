@@ -14,11 +14,14 @@ export default function Navigator() {
       container
       item
       alignItems={"end"}
-      justifyContent={"space-evenly"}
       style={styles.nav}
       sx={{
         "& > div:hover": {
           cursor: "pointer",
+        },
+        justifyContent: {
+          xs: "space-between",
+          md: "space-evenly",
         },
       }}
     >

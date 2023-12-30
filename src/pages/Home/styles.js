@@ -21,7 +21,6 @@ export default {
   item: {
     borderRadius: "20px 20px 0px 0px",
     objectFit: "cover",
-    width: 172,
   },
   info: {
     padding: "8px 13px",

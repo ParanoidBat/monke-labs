@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Grid, Typography } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import Navigator from "../../components/Navigator";
 import ProductModal from "../../components/ProductModal";
 import FilterModal from "../../components/FilterModal";
@@ -82,6 +83,13 @@ const itemSVGs = [
   },
 ];
 
+const Image = styled("img")(({ theme }) => ({
+  width: 140,
+  [theme.breakpoints.up("md")]: {
+    width: 172,
+  },
+}));
+
 export default function Home() {
   const [openDialog, setOpenDialog] = useState(false);
   const [openFilterDialog, setOpenFilterDialog] = useState(false);
@@ -113,11 +121,11 @@ export default function Home() {
       }}
     >
       <Grid container item xs={2}>
-        <Grid item xs={5} md={2}>
+        <Grid item xs={6} md={2}>
           <Typography style={styles.heading}>Hey Danial</Typography>
           <Typography>It&apos;s dinner time!</Typography>
         </Grid>
-        <Grid container item xs={7} md={10} justifyContent={"space-between"}>
+        <Grid container item xs={6} md={10} justifyContent={"space-between"}>
           <Grid item>
             <img src={WavingHandSVG} alt="Waving hand icon" />
           </Grid>
@@ -209,7 +217,7 @@ export default function Home() {
                 md={3}
               >
                 <Grid item onClick={() => handleItemClick(item)}>
-                  <img src={item.svg} style={styles.item} />
+                  <Image src={item.svg} style={styles.item} />
                 </Grid>
                 <Grid
                   container
