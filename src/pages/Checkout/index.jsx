@@ -33,6 +33,12 @@ const formLabelStyle = {
   },
 };
 
+const radioThumbStyle = {
+  "&.Mui-checked": {
+    color: "black",
+  },
+};
+
 export default function Checkout() {
   const navigate = useNavigate();
   const useQuery = () => new URLSearchParams(useLocation().search);
@@ -64,24 +70,31 @@ export default function Checkout() {
       </Typography>
       <Grid container item xs={12}>
         <FormControl style={{ width: "80%" }}>
-          <RadioGroup row={false} sx={styles.radioGroup}>
+          <RadioGroup
+            row={false}
+            sx={{
+              "& > label": {
+                marginBottom: 5,
+              },
+            }}
+          >
             <FormControlLabel
               value={"card"}
-              control={<Radio />}
+              control={<Radio sx={radioThumbStyle} />}
               labelPlacement="start"
               label={<Card svg={MasterCardSVG} info={"Debit/Credit card"} />}
               sx={formLabelStyle}
             />
             <FormControlLabel
               value={"paypal"}
-              control={<Radio />}
+              control={<Radio sx={radioThumbStyle} />}
               labelPlacement="start"
               label={<Card svg={PaypalSVG} info={"PayPal"} />}
               sx={formLabelStyle}
             />
             <FormControlLabel
               value={"payoneer"}
-              control={<Radio />}
+              control={<Radio sx={radioThumbStyle} />}
               labelPlacement="start"
               label={<Card svg={PayoneerSVG} info={"Payoneer"} />}
               sx={formLabelStyle}

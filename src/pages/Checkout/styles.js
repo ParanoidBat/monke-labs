@@ -1,6 +1,7 @@
 export default {
   container: {
     background: "#f0f4fc",
+    padding: "10px 15px",
     borderRadius: 50,
   },
   heading: {
@@ -12,14 +13,7 @@ export default {
     color: "#000",
     fontSize: 14,
     fontWeight: 500,
-  },
-  radioGroup: {
-    "& > label": {
-      marginBottom: 5,
-    },
-    ".Mui-checked": {
-      color: "black",
-    },
+    marginLeft: "1rem",
   },
   details: {
     color: "#a1a1a1",
