@@ -132,14 +132,7 @@ export default function Home() {
           </Typography>
         </Grid>
       </Grid>
-      <Grid
-        container
-        item
-        xs={4}
-        style={{ overflowY: "auto", maxHeight: 450 }}
-        justifyContent={"space-between"}
-        rowGap={1}
-      >
+      <Grid container item xs={4} justifyContent={"space-between"} rowGap={1}>
         {itemSVGs
           .filter(
             (item) => item.price >= priceRange[0] && item.price <= priceRange[1]
@@ -177,9 +170,7 @@ export default function Home() {
             );
           })}
       </Grid>
-      <Grid container item xs={2}>
-        <Navigator />
-      </Grid>
+      <Navigator />
       {openDialog && (
         <ProductModal
           handleClose={() => setOpenDialog(false)}

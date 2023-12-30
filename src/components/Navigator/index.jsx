@@ -13,28 +13,23 @@ export default function Navigator() {
     <Grid
       container
       item
-      alignItems={"baseline"}
+      alignItems={"end"}
       justifyContent={"space-between"}
       style={styles.nav}
     >
-      <Grid item xs={2} onClick={() => navigate("/")}>
-        {" "}
+      <Grid item onClick={() => navigate("/")}>
         <img src={HomeSVG} alt="Home icon" />
       </Grid>
-      <Grid item xs={2}>
-        {" "}
+      <Grid item>
         <img src={HeartSVG} alt="Favourite icon" />
       </Grid>
-      <Grid item xs={2} onClick={() => navigate("/cart")}>
-        {" "}
+      <Grid item onClick={() => navigate("/cart")}>
         <img src={BagSVG} alt="Bag icon" />
       </Grid>
-      <Grid item xs={2}>
-        {" "}
+      <Grid item>
         <img src={StatsSVG} alt="Stats icon" />
       </Grid>
-      <Grid item xs={2}>
-        {" "}
+      <Grid item>
         <img src={ProfileSVG} alt="Profile icon" />
       </Grid>
     </Grid>
