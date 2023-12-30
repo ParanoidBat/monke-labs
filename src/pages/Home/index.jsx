@@ -141,7 +141,21 @@ export default function Home() {
         item
         xs={2}
         wrap="nowrap"
-        style={{ overflowX: "auto", maxWidth: "99%" }}
+        style={styles.itemsContainer}
+        sx={{
+          "&::-webkit-scrollbar": {
+            height: "0.4rem",
+          },
+          "&::-webkit-scrollbar-track": {
+            boxShadow: "inset 0 0 6px rgba(0,0,0,0.00)",
+            webkitBoxShadow: "inset 0 0 6px rgba(0,0,0,0.00)",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            backgroundColor: "#e74c1baa",
+            outline: "none",
+            borderRadius: "100px",
+          },
+        }}
       >
         {categorySVGs.map((svg, idx) => {
           return (

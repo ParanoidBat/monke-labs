@@ -35,4 +35,10 @@ export default {
     fontSize: 14,
     fontWeight: 500,
   },
+  itemsContainer: {
+    overflowX: "auto",
+    maxWidth: "99%",
+    scrollbarColor: "#e74c1baa #77777711",
+    scrollbarWidth: "thin",
+  },
 };
