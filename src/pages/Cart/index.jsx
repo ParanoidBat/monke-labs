@@ -51,7 +51,13 @@ export default function Cart() {
           <Typography style={styles.heading}>My Bucket</Typography>
         </Grid>
       </Grid>
-      <Grid container item rowGap={2.5}>
+      <Grid
+        container
+        item
+        alignContent={"flex-start"}
+        rowGap={2}
+        style={styles.itemsContainer}
+      >
         {cart.map((item, idx) => (
           <CartItem
             item={item}

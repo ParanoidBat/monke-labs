@@ -1,7 +1,7 @@
 export default {
   container: {
     width: 370,
-    heigth: 111,
+    height: "fit-content",
     borderRadius: 20,
     background: "#fff",
     boxShadow: "0px 2px 20px 0px rgba(0, 0, 0, 0.05)",
