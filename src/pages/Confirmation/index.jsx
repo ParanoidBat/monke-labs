@@ -13,23 +13,27 @@ export default function Confirmation() {
       <Grid item xs={1}>
         <img onClick={() => navigate("/")} src={ArrowLeftSVG} alt="Back icon" />
       </Grid>
-      <Grid item xs={1}>
+      <Grid item>
         <Typography style={styles.heading} textAlign={"center"}>
           &quot;Congratulations! Your Order Has Been Placed!&quot;
         </Typography>
       </Grid>
-      <Grid item xs={5} alignSelf={"center"}>
+      <Grid item alignSelf={"center"}>
         <img src={RiderSVG} alt="Rider icon" />
       </Grid>
-      <Grid item xs={3}>
+      <Grid item>
         <Typography textAlign={"center"}>
           Thank you for choosing our services! Your order has been successfully
           palced and is now being processed. We appreciate our trust in us and
           look forward to serving you.
         </Typography>
       </Grid>
-      <Grid item xs={2} alignSelf={"center"}>
-        <ActionButton text={"Return Home"} action={() => navigate("/")} />
+      <Grid item alignSelf={"center"}>
+        <ActionButton
+          text={"Return Home"}
+          action={() => navigate("/")}
+          width={211}
+        />
       </Grid>
     </Grid>
   );
