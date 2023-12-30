@@ -8,12 +8,12 @@ export default {
   heading: {
     color: "#000",
     fontSize: 25,
-    fontWeight: 600,
+    fontFamily: "PoppinsBold",
   },
   subHeading: {
     color: "#000",
     fontSize: 18,
-    fontWeight: 600,
+    fontFamily: "PoppinsBold",
   },
   caption: {
     color: "#a1a1a1",

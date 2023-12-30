@@ -37,7 +37,12 @@ export default function Confirmation() {
           },
         }}
       >
-        <Typography textAlign={"center"}>
+        <Typography
+          textAlign={"center"}
+          style={{
+            fontFamily: "Poppins",
+          }}
+        >
           Thank you for choosing our services! Your order has been successfully
           palced and is now being processed. We appreciate our trust in us and
           look forward to serving you.

@@ -62,6 +62,9 @@ export default function ProductModal({ handleClose, open, product }) {
         "& .MuiDialog-paper": {
           borderRadius: "50px",
         },
+        "& p": {
+          fontFamily: "Poppins",
+        },
       }}
     >
       <Grid container direction={"column"} rowGap={2} style={styles.container}>

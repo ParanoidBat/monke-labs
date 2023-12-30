@@ -47,6 +47,9 @@ export default function Cart() {
           xs: "10px 15px",
           md: "10px 225px",
         },
+        "& p": {
+          fontFamily: "Poppins",
+        },
       }}
       gap={3}
     >

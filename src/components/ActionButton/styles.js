@@ -6,5 +6,6 @@ export default {
     color: "#fff",
     fontSize: 25,
     border: "none",
+    fontFamily: "Poppins",
   },
 };

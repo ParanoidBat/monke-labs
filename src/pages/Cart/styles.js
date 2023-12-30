@@ -5,8 +5,8 @@ export default {
   },
   heading: {
     fontSize: 25,
-    fontWeight: 600,
     color: "#000",
+    fontFamily: "PoppinsBold",
   },
   itemsContainer: {
     height: "70vh",

@@ -6,6 +6,6 @@ export default {
   heading: {
     color: "#000",
     fontSize: 25,
-    fontWeight: 600,
+    fontFamily: "PoppinsBold",
   },
 };

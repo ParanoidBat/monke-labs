@@ -5,7 +5,7 @@ export default {
   },
   heading: {
     fontSize: 25,
-    fontWeight: 600,
+    fontFamily: "PoppinsBold",
     color: "#000",
   },
   paymentinfo: {

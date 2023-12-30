@@ -2,11 +2,12 @@ export default {
   container: {
     background: "#f0f4fc",
     borderRadius: 50,
+    fontFamily: "Poppins",
   },
   heading: {
     color: "#000",
     fontSize: "25px",
-    fontWeight: "600",
+    fontFamily: "PoppinsBold",
   },
   subHeading: {
     color: "#000",

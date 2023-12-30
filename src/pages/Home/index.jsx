@@ -107,6 +107,9 @@ export default function Home() {
         "&>div": {
           padding: "0px 15px",
         },
+        "& p": {
+          fontFamily: "Poppins",
+        },
       }}
     >
       <Grid container item xs={2}>
