@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Dialog, Grid, Slider, Typography } from "@mui/material";
+import { Dialog, Slider, Stack, Typography } from "@mui/material";
 import styles from "./styles";
 import ActionButton from "../ActionButton";
 
@@ -17,8 +17,17 @@ export default function FilterModal({
   };
 
   return (
-    <Dialog onClose={handleClose} open={open}>
-      <Grid container style={styles.container} justifyContent={"center"}>
+    <Dialog
+      onClose={handleClose}
+      open={open}
+      sx={{
+        "& .MuiDialog-paper": {
+          borderRadius: "50px",
+          width: 400,
+        },
+      }}
+    >
+      <Stack style={styles.container} alignItems={"center"} gap={3}>
         <Typography gutterBottom style={styles.heading}>
           Set Price Range
         </Typography>
@@ -40,7 +49,7 @@ export default function FilterModal({
           onChange={(e, v) => setValue(v)}
         />
         <ActionButton text={"Set"} action={handleSet} width={"min-content"} />
-      </Grid>
+      </Stack>
     </Dialog>
   );
 }

@@ -14,7 +14,7 @@ export default function Navigator() {
       container
       item
       alignItems={"end"}
-      justifyContent={"space-between"}
+      justifyContent={"space-evenly"}
       style={styles.nav}
       sx={{
         "& > div:hover": {

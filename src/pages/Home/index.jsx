@@ -21,6 +21,7 @@ const categorySVGs = [
   SaladSVG,
   SteakSVG,
   SaladSVG,
+  SteakSVG,
 ];
 const itemSVGs = [
   {
@@ -103,6 +104,9 @@ export default function Home() {
           xs: "18px 30px",
           md: "18px 225px",
         },
+        "&>div": {
+          padding: "0px 15px",
+        },
       }}
     >
       <Grid container item xs={2}>
@@ -129,7 +133,13 @@ export default function Home() {
           </Typography>
         </Grid>
       </Grid>
-      <Grid container item xs={2} wrap="nowrap" style={{ overflowX: "auto" }}>
+      <Grid
+        container
+        item
+        xs={2}
+        wrap="nowrap"
+        style={{ overflowX: "auto", maxWidth: "99%" }}
+      >
         {categorySVGs.map((svg, idx) => {
           return (
             <Grid item key={`category-${idx}`} style={{ marginRight: 15 }}>
