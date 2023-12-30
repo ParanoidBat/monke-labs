@@ -1,7 +1,6 @@
 export default {
   container: {
     background: "#f0f4fc",
-    padding: "10px 15px",
     borderRadius: 50,
   },
   heading: {

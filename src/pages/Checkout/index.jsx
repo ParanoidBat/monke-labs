@@ -52,7 +52,17 @@ export default function Checkout() {
   };
 
   return (
-    <Grid container style={styles.container} gap={3}>
+    <Grid
+      container
+      style={styles.container}
+      gap={3}
+      sx={{
+        padding: {
+          xs: "10px 15px",
+          md: "10px 225px",
+        },
+      }}
+    >
       <Grid container item>
         <Grid item xs={4}>
           <img
@@ -69,7 +79,14 @@ export default function Checkout() {
         Payment
       </Typography>
       <Grid container item xs={12}>
-        <FormControl style={{ width: "80%" }}>
+        <FormControl
+          sx={{
+            width: {
+              xs: "80%",
+              md: "70%",
+            },
+          }}
+        >
           <RadioGroup
             row={false}
             sx={{

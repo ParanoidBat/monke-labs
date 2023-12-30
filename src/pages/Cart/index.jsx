@@ -10,6 +10,7 @@ import SaladSVG from "../../assets/cart/cart_salad.svg";
 import SteakSVG from "../../assets/cart/cart_steak.svg";
 import VeggiesSVG from "../../assets/cart/cart_veggies.svg";
 import MixSaladSVG from "../../assets/cart/mix_salad.svg";
+import CartIllustration from "../../assets/cart/cart_ilt.svg";
 import styles from "./styles";
 
 const cartSVGs = [CakeSVG, SaladSVG, SteakSVG, VeggiesSVG, MixSaladSVG];
@@ -72,6 +73,18 @@ export default function Cart() {
           />
         ))}
       </Stack>
+      <Grid
+        item
+        xs={5}
+        sx={{
+          display: {
+            xs: "none",
+            md: "block",
+          },
+        }}
+      >
+        <img src={CartIllustration} />
+      </Grid>
       <ActionArea
         tag={"Total"}
         price={total}
