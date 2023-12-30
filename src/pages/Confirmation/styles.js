@@ -9,4 +9,8 @@ export default {
     fontWeight: 600,
     color: "#000",
   },
+  homeBtn: {
+    position: "fixed",
+    bottom: 50,
+  },
 };

@@ -43,7 +43,7 @@ export default function Confirmation() {
           look forward to serving you.
         </Typography>
       </Grid>
-      <Grid alignSelf={"center"}>
+      <Grid alignSelf={"center"} style={styles.homeBtn}>
         <ActionButton
           text={"Return Home"}
           action={() => navigate("/")}

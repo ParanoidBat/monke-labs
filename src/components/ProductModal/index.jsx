@@ -19,6 +19,12 @@ const Image = styled("img")(({ theme }) => ({
   },
 }));
 
+const AddSubImage = styled("img")(() => ({
+  "&:hover": {
+    cursor: "pointer",
+  },
+}));
+
 export default function ProductModal({ handleClose, open, product }) {
   const [quantity, setQuantity] = useState(0);
   const { cart, setCart } = useContext(CartContext);
@@ -79,11 +85,11 @@ export default function ProductModal({ handleClose, open, product }) {
             </Grid>
             <Stack alignItems={"center"}>
               <div onClick={handleAdd}>
-                <img src={AddSVG} alt="Add icon" />
+                <AddSubImage src={AddSVG} alt="Add icon" />
               </div>
               <Typography fontSize={30}>{quantity}</Typography>
               <div onClick={handleSub}>
-                <img src={MinusSVG} alt="Subtract icon" />
+                <AddSubImage src={MinusSVG} alt="Subtract icon" />
               </div>
             </Stack>
           </Grid>
