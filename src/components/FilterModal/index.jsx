@@ -39,7 +39,7 @@ export default function FilterModal({
           }}
           onChange={(e, v) => setValue(v)}
         />
-        <ActionButton text={"Set"} action={handleSet} />
+        <ActionButton text={"Set"} action={handleSet} width={"min-content"} />
       </Grid>
     </Dialog>
   );
