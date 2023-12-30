@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { Grid, Typography, Dialog } from "@mui/material";
+import { Grid, Typography, Dialog, Stack } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { CartContext } from "../../contexts/CartContext";
 import ArrowLeftSVG from "../../assets/product_page/arrowleft.svg";
@@ -13,6 +13,7 @@ import styles from "./styles";
 
 const Image = styled("img")(({ theme }) => ({
   width: "100%",
+  float: "inline-end",
   [theme.breakpoints.up("md")]: {
     width: "40%",
   },
@@ -72,21 +73,19 @@ export default function ProductModal({ handleClose, open, product }) {
         </Grid>
         <Grid container item>
           <Grid container item xs={2} direction={"column"}>
-            <Grid item>
+            <Grid item alignSelf={"center"}>
               <img src={StarSVG} alt="Rating icon" />
               <span style={{ fontSize: 16 }}>&nbsp;{product.rating}</span>
             </Grid>
-            <Grid item>
+            <Stack alignItems={"center"}>
               <div onClick={handleAdd}>
                 <img src={AddSVG} alt="Add icon" />
               </div>
-              <Typography fontSize={30} textAlign={"center"}>
-                {quantity}
-              </Typography>
+              <Typography fontSize={30}>{quantity}</Typography>
               <div onClick={handleSub}>
                 <img src={MinusSVG} alt="Subtract icon" />
               </div>
-            </Grid>
+            </Stack>
           </Grid>
           <Grid item xs={10}>
             <Image src={SteakImage} alt="Product image" />
