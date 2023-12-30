@@ -14,7 +14,14 @@ import EggsSVG from "../../assets/home/eggs.svg";
 import HeartSVG from "../../assets/home/heart.svg";
 import styles from "./styles";
 
-const categorySVGs = [SaladSVG, SteakSVG, SaladSVG];
+const categorySVGs = [
+  SaladSVG,
+  SteakSVG,
+  SaladSVG,
+  SaladSVG,
+  SteakSVG,
+  SaladSVG,
+];
 const itemSVGs = [
   {
     svg: GreenSaladSVG,
@@ -85,16 +92,25 @@ export default function Home() {
     setOpenDialog(true);
   };
 
-  console.log(priceRange[0]);
-
   return (
-    <Grid container direction={"column"} rowGap={2} style={styles.container}>
+    <Grid
+      container
+      direction={"column"}
+      rowGap={2}
+      style={styles.container}
+      sx={{
+        padding: {
+          xs: "18px 30px",
+          md: "18px 225px",
+        },
+      }}
+    >
       <Grid container item xs={2}>
-        <Grid item xs={5}>
+        <Grid item xs={5} md={2}>
           <Typography style={styles.heading}>Hey Danial</Typography>
           <Typography>It&apos;s dinner time!</Typography>
         </Grid>
-        <Grid container item xs={7} justifyContent={"space-between"}>
+        <Grid container item xs={7} md={10} justifyContent={"space-between"}>
           <Grid item>
             <img src={WavingHandSVG} alt="Waving hand icon" />
           </Grid>
@@ -127,12 +143,30 @@ export default function Home() {
           <Typography style={styles.subHeading}>Recommended Items</Typography>
         </Grid>
         <Grid item onClick={() => setOpenFilterDialog(true)}>
-          <Typography style={{ ...styles.subHeading, color: "#e74c1b" }}>
+          <Typography
+            style={{ ...styles.subHeading, color: "#e74c1b" }}
+            sx={{
+              "&:hover": {
+                cursor: "pointer",
+              },
+            }}
+          >
             Filter
           </Typography>
         </Grid>
       </Grid>
-      <Grid container item xs={4} justifyContent={"space-between"} rowGap={1}>
+      <Grid
+        container
+        item
+        xs={4}
+        justifyContent={"space-between"}
+        rowGap={1}
+        sx={{
+          "& img:hover": {
+            cursor: "pointer",
+          },
+        }}
+      >
         {itemSVGs
           .filter(
             (item) => item.price >= priceRange[0] && item.price <= priceRange[1]
@@ -145,6 +179,7 @@ export default function Home() {
                 direction={"column"}
                 key={`item-${idx}`}
                 xs={5}
+                md={3}
               >
                 <Grid item onClick={() => handleItemClick(item)}>
                   <img src={item.svg} style={styles.item} />

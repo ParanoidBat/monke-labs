@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Grid, Tooltip } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import HomeSVG from "../../assets/navigator/home.svg";
 import HeartSVG from "../../assets/navigator/nav_heart.svg";
@@ -16,21 +16,36 @@ export default function Navigator() {
       alignItems={"end"}
       justifyContent={"space-between"}
       style={styles.nav}
+      sx={{
+        "& > div:hover": {
+          cursor: "pointer",
+        },
+      }}
     >
       <Grid item onClick={() => navigate("/")}>
-        <img src={HomeSVG} alt="Home icon" />
+        <Tooltip title="Home">
+          <img src={HomeSVG} alt="Home icon" />
+        </Tooltip>
       </Grid>
       <Grid item>
-        <img src={HeartSVG} alt="Favourite icon" />
+        <Tooltip title="Favourites">
+          <img src={HeartSVG} alt="Favourite icon" />
+        </Tooltip>
       </Grid>
       <Grid item onClick={() => navigate("/cart")}>
-        <img src={BagSVG} alt="Bag icon" />
+        <Tooltip title="Cart">
+          <img src={BagSVG} alt="Bag icon" />
+        </Tooltip>
       </Grid>
       <Grid item>
-        <img src={StatsSVG} alt="Stats icon" />
+        <Tooltip title="History">
+          <img src={StatsSVG} alt="Stats icon" />
+        </Tooltip>
       </Grid>
       <Grid item>
-        <img src={ProfileSVG} alt="Profile icon" />
+        <Tooltip title="Profile">
+          <img src={ProfileSVG} alt="Profile icon" />
+        </Tooltip>
       </Grid>
     </Grid>
   );

@@ -2,7 +2,6 @@ export default {
   container: {
     background: "#f0f4fc",
     borderRadius: 50,
-    padding: "18px 30px",
   },
   heading: {
     color: "#000",
