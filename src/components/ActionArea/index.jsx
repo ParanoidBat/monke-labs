@@ -2,7 +2,13 @@ import { Grid, Typography } from "@mui/material";
 import ActionButton from "../ActionButton";
 import styles from "./styles";
 
-export default function ActionArea({ tag, price, btnText, btnAction }) {
+export default function ActionArea({
+  tag,
+  price,
+  btnText,
+  btnAction,
+  btnWidth,
+}) {
   return (
     <Grid container alignItems={"center"}>
       <Grid item xs={5} md={7}>
@@ -14,7 +20,7 @@ export default function ActionArea({ tag, price, btnText, btnAction }) {
         </Grid>
       </Grid>
       <Grid item xs={2}>
-        <ActionButton text={btnText} action={btnAction} />
+        <ActionButton text={btnText} action={btnAction} width={btnWidth} />
       </Grid>
     </Grid>
   );

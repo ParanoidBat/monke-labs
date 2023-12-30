@@ -109,6 +109,7 @@ export default function ProductModal({ handleClose, open, product }) {
           price={product.price}
           btnText={"Add to cart"}
           btnAction={handleAddToCart}
+          btnWidth={190}
         />
       </Grid>
     </Dialog>
