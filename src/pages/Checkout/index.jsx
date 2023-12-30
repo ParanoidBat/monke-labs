@@ -28,6 +28,9 @@ function Card({ svg, info }) {
 }
 
 const formLabelStyle = {
+  "&.MuiFormControlLabel-root": {
+    marginLeft: 0,
+  },
   ".MuiFormControlLabel-label": {
     width: "100%",
   },
@@ -78,7 +81,7 @@ export default function Checkout() {
       <Typography gutterBottom style={styles.heading}>
         Payment
       </Typography>
-      <Grid container item xs={12}>
+      <Grid item xs={12}>
         <FormControl
           sx={{
             width: {
