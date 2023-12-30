@@ -12,4 +12,9 @@ export default {
     height: "70vh",
     overflowY: "auto",
   },
+  image: {
+    width: "80%",
+    position: "absolute",
+    bottom: 0,
+  },
 };

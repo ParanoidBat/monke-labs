@@ -73,13 +73,14 @@ export default function Cart() {
         item
         xs={5}
         sx={{
+          position: "relative",
           display: {
             xs: "none",
             md: "block",
           },
         }}
       >
-        <img src={CartIllustration} />
+        <img style={styles.image} src={CartIllustration} />
       </Grid>
       <ActionArea
         tag={"Total"}
