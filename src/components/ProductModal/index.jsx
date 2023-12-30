@@ -40,7 +40,15 @@ export default function ProductModal({ handleClose, open, product }) {
   };
 
   return (
-    <Dialog onClose={handleClose} open={open}>
+    <Dialog
+      onClose={handleClose}
+      open={open}
+      sx={{
+        "& .MuiDialog-paper": {
+          borderRadius: "50px",
+        },
+      }}
+    >
       <Grid container direction={"column"} rowGap={2} style={styles.container}>
         <Grid container item xs={1}>
           <Grid item xs={10}>

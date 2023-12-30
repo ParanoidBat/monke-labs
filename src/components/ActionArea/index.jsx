@@ -4,8 +4,8 @@ import styles from "./styles";
 
 export default function ActionArea({ tag, price, btnText, btnAction }) {
   return (
-    <Grid container>
-      <Grid item xs={6}>
+    <Grid container alignItems={"center"}>
+      <Grid item xs={5}>
         <Grid>
           <Typography style={styles.tag}>{tag}</Typography>
           <Typography style={styles.price}>
