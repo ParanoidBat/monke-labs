@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Grid, Typography } from "@mui/material";
+import { Grid, Stack, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContext";
 import ArrowLeftSVG from "../../assets/product_page/arrowleft.svg";
@@ -38,7 +38,17 @@ export default function Cart() {
   };
 
   return (
-    <Grid container style={styles.container} gap={3}>
+    <Grid
+      container
+      style={styles.container}
+      sx={{
+        padding: {
+          xs: "10px 15px",
+          md: "10px 225px",
+        },
+      }}
+      gap={3}
+    >
       <Grid container item>
         <Grid item xs={4}>
           <img
@@ -51,13 +61,7 @@ export default function Cart() {
           <Typography style={styles.heading}>My Bucket</Typography>
         </Grid>
       </Grid>
-      <Grid
-        container
-        item
-        alignContent={"flex-start"}
-        rowGap={2}
-        style={styles.itemsContainer}
-      >
+      <Stack rowGap={2} style={styles.itemsContainer}>
         {cart.map((item, idx) => (
           <CartItem
             item={item}
@@ -67,7 +71,7 @@ export default function Cart() {
             removeItem={handleRemoveItem}
           />
         ))}
-      </Grid>
+      </Stack>
       <ActionArea
         tag={"Total"}
         price={total}

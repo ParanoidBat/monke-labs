@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { Grid, Typography, Dialog } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { CartContext } from "../../contexts/CartContext";
 import ArrowLeftSVG from "../../assets/product_page/arrowleft.svg";
 import HeartSVG from "../../assets/product_page/product_heart.svg";
@@ -9,6 +10,13 @@ import StarSVG from "../../assets/product_page/star.svg";
 import SteakImage from "../../assets/product_page/steak.png";
 import ActionArea from "../ActionArea";
 import styles from "./styles";
+
+const Image = styled("img")(({ theme }) => ({
+  width: "100%",
+  [theme.breakpoints.up("md")]: {
+    width: "40%",
+  },
+}));
 
 export default function ProductModal({ handleClose, open, product }) {
   const [quantity, setQuantity] = useState(0);
@@ -62,7 +70,7 @@ export default function ProductModal({ handleClose, open, product }) {
           <Typography style={styles.heading}>{product.info}</Typography>
           <Typography style={styles.caption}>By Steak House</Typography>
         </Grid>
-        <Grid container item xs={5}>
+        <Grid container item>
           <Grid container item xs={2} direction={"column"}>
             <Grid item>
               <img src={StarSVG} alt="Rating icon" />
@@ -81,11 +89,7 @@ export default function ProductModal({ handleClose, open, product }) {
             </Grid>
           </Grid>
           <Grid item xs={10}>
-            <img
-              src={SteakImage}
-              alt="Product image"
-              style={{ width: "100%" }}
-            />
+            <Image src={SteakImage} alt="Product image" />
           </Grid>
         </Grid>
         <Grid item xs={2}>

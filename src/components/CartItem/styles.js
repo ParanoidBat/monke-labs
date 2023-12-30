@@ -1,6 +1,6 @@
 export default {
   container: {
-    width: 370,
+    width: 360,
     height: "fit-content",
     borderRadius: 20,
     background: "#fff",
