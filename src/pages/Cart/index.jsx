@@ -79,7 +79,13 @@ export default function Cart() {
           position: "relative",
           display: {
             xs: "none",
-            md: "block",
+            sm: "block",
+          },
+          "&>img": {
+            width: {
+              sm: "120%",
+              md: "80%",
+            },
           },
         }}
       >

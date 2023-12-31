@@ -13,7 +13,6 @@ export default {
     overflowY: "auto",
   },
   image: {
-    width: "80%",
     position: "absolute",
     bottom: 0,
   },
