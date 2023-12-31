@@ -8,7 +8,7 @@ import AddSVG from "../../assets/product_page/addcircle.svg";
 import MinusSVG from "../../assets/product_page/minuscircle.svg";
 import StarSVG from "../../assets/product_page/star.svg";
 import SteakImage from "../../assets/product_page/steak.png";
-import ActionArea from "../ActionArea";
+import ActionButton from "../ActionButton";
 import styles from "./styles";
 
 const Image = styled("img")(({ theme }) => ({
@@ -114,13 +114,24 @@ export default function ProductModal({ handleClose, open, product }) {
           <Typography style={styles.subHeading}>Description</Typography>
           <Typography style={styles.desc}>{product.desc}</Typography>
         </Grid>
-        <ActionArea
-          tag={"Price"}
-          price={product.price}
-          btnText={"Add to cart"}
-          btnAction={handleAddToCart}
-          btnWidth={190}
-        />
+        <Grid container alignItems={"center"}>
+          <Grid item xs={5} sm={8} md={7}>
+            <Grid>
+              <Typography style={styles.tag}>Price</Typography>
+              <Typography style={styles.price}>
+                {product.price.toFixed(2)}&nbsp;
+                <span style={{ color: "#e74c1b" }}>$</span>
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid item xs={2} sm={2} md={2}>
+            <ActionButton
+              text={"Add to cart"}
+              action={handleAddToCart}
+              width={190}
+            />
+          </Grid>
+        </Grid>
       </Grid>
     </Dialog>
   );
