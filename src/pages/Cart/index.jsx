@@ -3,7 +3,7 @@ import { Grid, Stack, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContext";
 import CartItem from "../../components/CartItem";
-import ActionArea from "../../components/ActionArea";
+import ActionButton from "../../components/ActionButton";
 import CakeSVG from "../../assets/cart/cake.svg";
 import SaladSVG from "../../assets/cart/cart_salad.svg";
 import SteakSVG from "../../assets/cart/cart_steak.svg";
@@ -91,12 +91,20 @@ export default function Cart() {
       >
         <img style={styles.image} src={CartIllustration} />
       </Grid>
-      <ActionArea
-        tag={"Total"}
-        price={total}
-        btnText={"Checkout"}
-        btnAction={handleButtonAction}
-      />
+      <Grid container alignItems={"center"}>
+        <Grid item xs={6} sm={9} md={7}>
+          <Grid>
+            <Typography style={styles.tag}>Total</Typography>
+            <Typography style={styles.price}>
+              {total.toFixed(2)}&nbsp;
+              <span style={{ color: "#e74c1b" }}>$</span>
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid item xs={2}>
+          <ActionButton text={"Checkout"} action={handleButtonAction} />
+        </Grid>
+      </Grid>
     </Grid>
   );
 }

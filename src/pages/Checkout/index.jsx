@@ -12,7 +12,7 @@ import { CartContext } from "../../contexts/CartContext";
 import MasterCardSVG from "../../assets/checkout/mastercard.svg";
 import PayoneerSVG from "../../assets/checkout/payoneer.svg";
 import PaypalSVG from "../../assets/checkout/paypal.svg";
-import ActionArea from "../../components/ActionArea";
+import ActionButton from "../../components/ActionButton";
 import styles from "./styles";
 import BackArrow from "../../components/BackArrow";
 
@@ -149,12 +149,20 @@ export default function Checkout() {
           );
         })}
       </Grid>
-      <ActionArea
-        tag={"Total"}
-        price={parseFloat(query.get("total"))}
-        btnText={"Pay Now"}
-        btnAction={handleButtonAction}
-      />
+      <Grid container alignItems={"center"}>
+        <Grid item xs={6} sm={8} md={7}>
+          <Grid>
+            <Typography style={styles.tag}>Total</Typography>
+            <Typography style={styles.price}>
+              {parseFloat(query.get("total")).toFixed(2)}&nbsp;
+              <span style={{ color: "#e74c1b" }}>$</span>
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid item xs={2}>
+          <ActionButton text={"Pay Now"} action={handleButtonAction} />
+        </Grid>
+      </Grid>
     </Grid>
   );
 }

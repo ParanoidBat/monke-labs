@@ -16,4 +16,12 @@ export default {
     position: "absolute",
     bottom: 0,
   },
+  tag: {
+    color: "#434141",
+    fontSize: 18,
+  },
+  price: {
+    color: "#000",
+    fontSize: 30,
+  },
 };
