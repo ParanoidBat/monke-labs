@@ -121,11 +121,18 @@ export default function Home() {
       }}
     >
       <Grid container item xs={2}>
-        <Grid item xs={6} md={2}>
+        <Grid item xs={6} sm={3} md={2}>
           <Typography style={styles.heading}>Hey Danial</Typography>
           <Typography>It&apos;s dinner time!</Typography>
         </Grid>
-        <Grid container item xs={6} md={10} justifyContent={"space-between"}>
+        <Grid
+          container
+          item
+          xs={6}
+          sm={9}
+          md={10}
+          justifyContent={"space-between"}
+        >
           <Grid item>
             <img src={WavingHandSVG} alt="Waving hand icon" />
           </Grid>
@@ -214,6 +221,7 @@ export default function Home() {
                 direction={"column"}
                 key={`item-${idx}`}
                 xs={5}
+                sm={4}
                 md={3}
               >
                 <Grid item onClick={() => handleItemClick(item)}>

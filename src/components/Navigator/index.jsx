@@ -21,31 +21,31 @@ export default function Navigator() {
         },
         justifyContent: {
           xs: "space-between",
-          md: "space-evenly",
+          sm: "space-evenly",
         },
       }}
     >
-      <Grid item onClick={() => navigate("/")}>
+      <Grid item xs={2} onClick={() => navigate("/")}>
         <Tooltip title="Home">
           <img src={HomeSVG} alt="Home icon" />
         </Tooltip>
       </Grid>
-      <Grid item>
+      <Grid item xs={2}>
         <Tooltip title="Favourites">
           <img src={HeartSVG} alt="Favourite icon" />
         </Tooltip>
       </Grid>
-      <Grid item onClick={() => navigate("/cart")}>
+      <Grid item xs={2} onClick={() => navigate("/cart")}>
         <Tooltip title="Cart">
           <img src={BagSVG} alt="Bag icon" />
         </Tooltip>
       </Grid>
-      <Grid item>
+      <Grid item xs={2}>
         <Tooltip title="History">
           <img src={StatsSVG} alt="Stats icon" />
         </Tooltip>
       </Grid>
-      <Grid item>
+      <Grid item xs={2}>
         <Tooltip title="Profile">
           <img src={ProfileSVG} alt="Profile icon" />
         </Tooltip>
